@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20210822 21:38:16.724" rpa="false" schemaversion="2">
+<suite id="s1" name="Correct search by name" source="C:\Users\Ja\PycharmProjects\JPetStore_tests\Tests\Search\Correct_search_by_name.robot">
+<test id="s1-t1" name="Open Browser">
+<kw name="Start TestCase" library="CommonFunctionality">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210822 21:38:16.989" level="INFO">Opening browser 'chrome' to base url 'https://petstore.octoperf.com'.</msg>
+<status status="PASS" starttime="20210822 21:38:16.989" endtime="20210822 21:38:18.358"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210822 21:38:18.358" endtime="20210822 21:38:18.479"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:16.989" endtime="20210822 21:38:18.479"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:16.988" endtime="20210822 21:38:18.479"/>
+</test>
+<test id="s1-t2" name="Enter The Store">
+<kw name="Enter the Store" library="CommonFunctionality">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EnterStoreButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210822 21:38:18.484" level="INFO">Clicking element 'xpath://*[@id='Content']/p[1]/a'.</msg>
+<status status="PASS" starttime="20210822 21:38:18.484" endtime="20210822 21:38:18.712"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:18.483" endtime="20210822 21:38:18.712"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:18.483" endtime="20210822 21:38:18.713"/>
+</test>
+<test id="s1-t3" name="Verify basic search functionality">
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>Bulldog</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210822 21:38:18.717" level="INFO">Typing text 'Bulldog' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210822 21:38:18.717" endtime="20210822 21:38:18.800"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210822 21:38:18.801" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210822 21:38:19.206" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210822 21:38:19.206" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210822 21:38:18.801" endtime="20210822 21:38:19.209"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:18.716" endtime="20210822 21:38:19.209"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>Bulldog</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210822 21:38:19.226" level="INFO">Current page contains text 'Bulldog'.</msg>
+<status status="PASS" starttime="20210822 21:38:19.209" endtime="20210822 21:38:19.227"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210822 21:38:19.375" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Bulldog.png"&gt;&lt;img src="Results_for_Bulldog.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210822 21:38:19.227" endtime="20210822 21:38:19.375"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:19.209" endtime="20210822 21:38:19.376"/>
+</kw>
+<doc>This test case verifies the basic search: Search-1</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20210822 21:38:18.715" endtime="20210822 21:38:19.376"/>
+</test>
+<test id="s1-t4" name="Verify basic search functionality">
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>Poodle</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210822 21:38:19.381" level="INFO">Typing text 'Poodle' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210822 21:38:19.380" endtime="20210822 21:38:19.467"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210822 21:38:19.467" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210822 21:38:19.871" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210822 21:38:19.871" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210822 21:38:19.467" endtime="20210822 21:38:19.875"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:19.380" endtime="20210822 21:38:19.876"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>Poodle</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210822 21:38:19.894" level="INFO">Current page contains text 'Poodle'.</msg>
+<status status="PASS" starttime="20210822 21:38:19.876" endtime="20210822 21:38:19.894"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210822 21:38:20.080" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Poodle.png"&gt;&lt;img src="Results_for_Poodle.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210822 21:38:19.894" endtime="20210822 21:38:20.081"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:19.876" endtime="20210822 21:38:20.081"/>
+</kw>
+<doc>This test case verifies the basic search: Search-1</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20210822 21:38:19.379" endtime="20210822 21:38:20.081"/>
+</test>
+<test id="s1-t5" name="Verify basic search functionality">
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>Dalmation</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210822 21:38:20.087" level="INFO">Typing text 'Dalmation' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210822 21:38:20.087" endtime="20210822 21:38:20.171"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210822 21:38:20.172" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210822 21:38:20.576" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210822 21:38:20.577" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210822 21:38:20.171" endtime="20210822 21:38:20.586"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:20.087" endtime="20210822 21:38:20.586"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>Dalmation</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210822 21:38:20.601" level="INFO">Current page contains text 'Dalmation'.</msg>
+<status status="PASS" starttime="20210822 21:38:20.587" endtime="20210822 21:38:20.601"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210822 21:38:20.768" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Dalmation.png"&gt;&lt;img src="Results_for_Dalmation.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210822 21:38:20.601" endtime="20210822 21:38:20.768"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:20.587" endtime="20210822 21:38:20.769"/>
+</kw>
+<doc>This test case verifies the basic search: Search-1</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20210822 21:38:20.086" endtime="20210822 21:38:20.769"/>
+</test>
+<test id="s1-t6" name="Verify basic search functionality">
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>Golden Retriever</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210822 21:38:20.774" level="INFO">Typing text 'Golden Retriever' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210822 21:38:20.773" endtime="20210822 21:38:20.863"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210822 21:38:20.864" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210822 21:38:21.247" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210822 21:38:21.248" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210822 21:38:20.863" endtime="20210822 21:38:21.254"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:20.773" endtime="20210822 21:38:21.254"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>Golden Retriever</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210822 21:38:21.271" level="INFO">Current page contains text 'Golden Retriever'.</msg>
+<status status="PASS" starttime="20210822 21:38:21.255" endtime="20210822 21:38:21.271"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210822 21:38:21.434" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Golden%20Retriever.png"&gt;&lt;img src="Results_for_Golden%20Retriever.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210822 21:38:21.271" endtime="20210822 21:38:21.434"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:21.255" endtime="20210822 21:38:21.434"/>
+</kw>
+<doc>This test case verifies the basic search: Search-1</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20210822 21:38:20.772" endtime="20210822 21:38:21.435"/>
+</test>
+<test id="s1-t7" name="Verify basic search functionality">
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>Labrador Retriever</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210822 21:38:21.439" level="INFO">Typing text 'Labrador Retriever' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210822 21:38:21.438" endtime="20210822 21:38:21.524"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210822 21:38:21.525" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210822 21:38:21.872" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210822 21:38:21.872" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210822 21:38:21.524" endtime="20210822 21:38:21.882"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:21.438" endtime="20210822 21:38:21.882"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>Labrador Retriever</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210822 21:38:21.900" level="INFO">Current page contains text 'Labrador Retriever'.</msg>
+<status status="PASS" starttime="20210822 21:38:21.884" endtime="20210822 21:38:21.901"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210822 21:38:22.078" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Labrador%20Retriever.png"&gt;&lt;img src="Results_for_Labrador%20Retriever.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210822 21:38:21.901" endtime="20210822 21:38:22.078"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:21.883" endtime="20210822 21:38:22.078"/>
+</kw>
+<doc>This test case verifies the basic search: Search-1</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20210822 21:38:21.437" endtime="20210822 21:38:22.079"/>
+</test>
+<test id="s1-t8" name="Verify basic search functionality">
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>Chihuahua</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210822 21:38:22.083" level="INFO">Typing text 'Chihuahua' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210822 21:38:22.083" endtime="20210822 21:38:22.164"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210822 21:38:22.165" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210822 21:38:22.556" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210822 21:38:22.556" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210822 21:38:22.165" endtime="20210822 21:38:22.564"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:22.082" endtime="20210822 21:38:22.565"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>Chihuahua</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210822 21:38:22.580" level="INFO">Current page contains text 'Chihuahua'.</msg>
+<status status="PASS" starttime="20210822 21:38:22.565" endtime="20210822 21:38:22.580"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210822 21:38:22.780" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Chihuahua.png"&gt;&lt;img src="Results_for_Chihuahua.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210822 21:38:22.580" endtime="20210822 21:38:22.780"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:22.565" endtime="20210822 21:38:22.781"/>
+</kw>
+<doc>This test case verifies the basic search: Search-1</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20210822 21:38:22.082" endtime="20210822 21:38:22.781"/>
+</test>
+<test id="s1-t9" name="Close Browser">
+<kw name="Finish TestCase" library="CommonFunctionality">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210822 21:38:22.784" endtime="20210822 21:38:25.016"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:22.784" endtime="20210822 21:38:25.016"/>
+</kw>
+<status status="PASS" starttime="20210822 21:38:22.783" endtime="20210822 21:38:25.017"/>
+</test>
+<doc>Basic Search Functionality</doc>
+<status status="PASS" starttime="20210822 21:38:16.726" endtime="20210822 21:38:25.021"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="6" fail="0" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="9" fail="0" skip="0" id="s1" name="Correct search by name">Correct search by name</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210822 21:38:19.378" level="WARN">Multiple test cases with name 'Verify basic search functionality' executed in test suite 'Correct search by name'.</msg>
+<msg timestamp="20210822 21:38:20.084" level="WARN">Multiple test cases with name 'Verify basic search functionality' executed in test suite 'Correct search by name'.</msg>
+<msg timestamp="20210822 21:38:20.771" level="WARN">Multiple test cases with name 'Verify basic search functionality' executed in test suite 'Correct search by name'.</msg>
+<msg timestamp="20210822 21:38:21.436" level="WARN">Multiple test cases with name 'Verify basic search functionality' executed in test suite 'Correct search by name'.</msg>
+<msg timestamp="20210822 21:38:22.081" level="WARN">Multiple test cases with name 'Verify basic search functionality' executed in test suite 'Correct search by name'.</msg>
+</errors>
+</robot>
