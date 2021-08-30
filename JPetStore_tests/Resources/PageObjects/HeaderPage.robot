@@ -13,4 +13,8 @@ Input Search Text and Click Search
     Input Text  ${SearchBox}  ${SearchText}
     Press Keys  ${SearchButton}  RETURN
 
+Click Quick Link
+    [Arguments]  ${CategoryQuickLink}
+    Click Element  ${CategoryQuickLink}
+
 

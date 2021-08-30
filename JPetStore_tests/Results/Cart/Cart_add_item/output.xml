@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20210830 21:54:22.197" rpa="false" schemaversion="2">
+<suite id="s1" name="Cart add item" source="C:\Users\Ja\Documents\GitHub\Prod\JPetStore_tests\JPetStore_tests\Tests\Cart\Cart_add_item.robot">
+<test id="s1-t1" name="Open Browser">
+<kw name="Start TestCase" library="CommonFunctionality">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210830 21:54:22.452" level="INFO">Opening browser 'chrome' to base url 'https://petstore.octoperf.com'.</msg>
+<status status="PASS" starttime="20210830 21:54:22.451" endtime="20210830 21:54:23.788"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210830 21:54:23.789" endtime="20210830 21:54:23.904"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:22.451" endtime="20210830 21:54:23.904"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:22.450" endtime="20210830 21:54:23.905"/>
+</test>
+<test id="s1-t2" name="Enter The Store">
+<kw name="Enter the Store" library="CommonFunctionality">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EnterStoreButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210830 21:54:23.909" level="INFO">Clicking element 'xpath://*[@id='Content']/p[1]/a'.</msg>
+<status status="PASS" starttime="20210830 21:54:23.908" endtime="20210830 21:54:24.180"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:23.907" endtime="20210830 21:54:24.181"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:23.907" endtime="20210830 21:54:24.181"/>
+</test>
+<test id="s1-t3" name="Verify user cart add item functionality">
+<kw name="Cart Header Entry" library="CommonFunctionality">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CartHeaderButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210830 21:54:24.184" level="INFO">Clicking element 'xpath://html/body/div[1]/div[2]/div/a[1]'.</msg>
+<status status="PASS" starttime="20210830 21:54:24.183" endtime="20210830 21:54:24.314"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:24.183" endtime="20210830 21:54:24.314"/>
+</kw>
+<kw name="Check Cart Empty" library="Cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CartHeaderButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210830 21:54:24.316" level="INFO">Clicking element 'xpath://html/body/div[1]/div[2]/div/a[1]'.</msg>
+<status status="PASS" starttime="20210830 21:54:24.315" endtime="20210830 21:54:24.421"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CartEmpty}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210830 21:54:24.443" level="INFO">Current page contains text 'Your cart is empty'.</msg>
+<status status="PASS" starttime="20210830 21:54:24.422" endtime="20210830 21:54:24.443"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${CartEmptyText}</arg>
+<arg>filename=${CartEmpty}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210830 21:54:24.551" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Your%20cart%20is%20empty.png"&gt;&lt;img src="Your%20cart%20is%20empty.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210830 21:54:24.444" endtime="20210830 21:54:24.552"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:24.315" endtime="20210830 21:54:24.553"/>
+</kw>
+<kw name="Click Quick Link" library="HeaderPage">
+<arg>${FishCategoryQuickLink}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CategoryQuickLink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210830 21:54:24.558" level="INFO">Clicking element 'xpath://html/body/div[1]/div[4]/a[1]'.</msg>
+<status status="PASS" starttime="20210830 21:54:24.557" endtime="20210830 21:54:24.723"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:24.554" endtime="20210830 21:54:24.724"/>
+</kw>
+<kw name="Click Product Id" library="LandingPage">
+<arg>${ProductId}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ProductId}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210830 21:54:24.728" level="INFO">Clicking element 'xpath://html/body/div[2]/div[2]/table/tbody/tr[2]/td[1]/a'.</msg>
+<status status="PASS" starttime="20210830 21:54:24.727" endtime="20210830 21:54:24.859"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:24.726" endtime="20210830 21:54:24.860"/>
+</kw>
+<kw name="Click Item Id" library="LandingPage">
+<arg>${ItemId}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ItemId}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210830 21:54:24.861" level="INFO">Clicking element 'xpath://html/body/div[2]/div[2]/table/tbody/tr[2]/td[1]/a'.</msg>
+<status status="PASS" starttime="20210830 21:54:24.861" endtime="20210830 21:54:25.015"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:24.860" endtime="20210830 21:54:25.015"/>
+</kw>
+<kw name="Click Add To Cart Button" library="LandingPage">
+<arg>${CartAddButton}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CartAddButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210830 21:54:25.016" level="INFO">Clicking element 'xpath://html/body/div[2]/div[2]/table/tbody/tr[7]/td/a'.</msg>
+<status status="PASS" starttime="20210830 21:54:25.016" endtime="20210830 21:54:25.122"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:25.015" endtime="20210830 21:54:25.123"/>
+</kw>
+<kw name="Cart Header Entry" library="CommonFunctionality">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CartHeaderButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210830 21:54:25.127" level="INFO">Clicking element 'xpath://html/body/div[1]/div[2]/div/a[1]'.</msg>
+<status status="PASS" starttime="20210830 21:54:25.126" endtime="20210830 21:54:25.239"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:25.125" endtime="20210830 21:54:25.239"/>
+</kw>
+<kw name="Check Cart Contains" library="Cart">
+<arg>${Description}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ItemName}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210830 21:54:25.263" level="INFO">Current page contains text 'Angelfish'.</msg>
+<status status="PASS" starttime="20210830 21:54:25.243" endtime="20210830 21:54:25.263"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${CartContains}</arg>
+<arg>filename=${ItemName}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210830 21:54:25.350" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Angelfish.png"&gt;&lt;img src="Angelfish.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210830 21:54:25.263" endtime="20210830 21:54:25.351"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:25.240" endtime="20210830 21:54:25.351"/>
+</kw>
+<doc>This test case verifies the cart add item functionality:</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20210830 21:54:24.182" endtime="20210830 21:54:25.351"/>
+</test>
+<test id="s1-t4" name="Close Browser">
+<kw name="Finish TestCase" library="CommonFunctionality">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210830 21:54:25.353" endtime="20210830 21:54:27.489"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:25.353" endtime="20210830 21:54:27.489"/>
+</kw>
+<status status="PASS" starttime="20210830 21:54:25.352" endtime="20210830 21:54:27.490"/>
+</test>
+<doc>Basic Cart Add Item Functionality</doc>
+<status status="PASS" starttime="20210830 21:54:22.200" endtime="20210830 21:54:27.493"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Cart add item">Cart add item</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

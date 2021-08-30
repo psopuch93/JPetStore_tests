@@ -20,5 +20,9 @@ Enter the Store
 Logo Entry
     Click Element  ${LogoEntry}
 
+Cart Header Entry
+    Click Element  ${CartHeaderButton}
+
+
 Finish TestCase
     Close Browser
