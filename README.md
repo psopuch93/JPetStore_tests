@@ -1,5 +1,7 @@
 # JPetStore_tests
-This repository contains automatic tests with Python Robotframework
+This repository contains automatic tests with Python Robotframework.
+
+Tests include demo pet store functionality https://petstore.octoperf.com/
 
 # How to run it
 
