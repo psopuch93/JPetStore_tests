@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20210829 17:35:17.938" rpa="false" schemaversion="2">
+<suite id="s1" name="Correct search by name everything" source="C:\Users\Ja\PycharmProjects\JPetStore_tests\Tests\Search\Correct_search_by_name_everything.robot">
+<test id="s1-t1" name="Open Browser">
+<kw name="Start TestCase" library="CommonFunctionality">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210829 17:35:18.213" level="INFO">Opening browser 'chrome' to base url 'https://petstore.octoperf.com'.</msg>
+<status status="PASS" starttime="20210829 17:35:18.212" endtime="20210829 17:35:19.621"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210829 17:35:19.621" endtime="20210829 17:35:19.743"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:18.212" endtime="20210829 17:35:19.744"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:18.211" endtime="20210829 17:35:19.744"/>
+</test>
+<test id="s1-t2" name="Enter The Store">
+<kw name="Enter the Store" library="CommonFunctionality">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EnterStoreButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:19.751" level="INFO">Clicking element 'xpath://*[@id='Content']/p[1]/a'.</msg>
+<status status="PASS" starttime="20210829 17:35:19.748" endtime="20210829 17:35:19.990"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:19.748" endtime="20210829 17:35:19.990"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:19.747" endtime="20210829 17:35:19.991"/>
+</test>
+<test id="s1-t3" name="Verify basic search functionality">
+<for flavor="IN">
+<var>${element}</var>
+<value>@{PetsCategory}</value>
+<iter>
+<var name="${element}">Angelfish</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:19.994" level="INFO">Typing text 'Angelfish' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:19.994" endtime="20210829 17:35:20.101"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:20.102" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:20.492" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:20.492" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:20.101" endtime="20210829 17:35:20.499"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:19.994" endtime="20210829 17:35:20.499"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:20.514" level="INFO">Current page contains text 'Angelfish'.</msg>
+<status status="PASS" starttime="20210829 17:35:20.500" endtime="20210829 17:35:20.514"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:20.724" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Angelfish.png"&gt;&lt;img src="Results_for_Angelfish.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:20.514" endtime="20210829 17:35:20.724"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:20.500" endtime="20210829 17:35:20.724"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:20.725" level="INFO">Angelfish</msg>
+<status status="PASS" starttime="20210829 17:35:20.725" endtime="20210829 17:35:20.725"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:19.992" endtime="20210829 17:35:20.725"/>
+</iter>
+<iter>
+<var name="${element}">Koi</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:20.726" level="INFO">Typing text 'Koi' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:20.726" endtime="20210829 17:35:20.802"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:20.803" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:21.169" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:21.169" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:20.802" endtime="20210829 17:35:21.174"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:20.725" endtime="20210829 17:35:21.174"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:21.191" level="INFO">Current page contains text 'Koi'.</msg>
+<status status="PASS" starttime="20210829 17:35:21.175" endtime="20210829 17:35:21.191"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:21.356" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Koi.png"&gt;&lt;img src="Results_for_Koi.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:21.192" endtime="20210829 17:35:21.356"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:21.174" endtime="20210829 17:35:21.357"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:21.357" level="INFO">Koi</msg>
+<status status="PASS" starttime="20210829 17:35:21.357" endtime="20210829 17:35:21.357"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:20.725" endtime="20210829 17:35:21.357"/>
+</iter>
+<iter>
+<var name="${element}">Tiger Shark</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:21.358" level="INFO">Typing text 'Tiger Shark' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:21.358" endtime="20210829 17:35:21.439"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:21.439" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:21.806" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:21.807" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:21.439" endtime="20210829 17:35:21.813"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:21.357" endtime="20210829 17:35:21.814"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:21.828" level="INFO">Current page contains text 'Tiger Shark'.</msg>
+<status status="PASS" starttime="20210829 17:35:21.814" endtime="20210829 17:35:21.828"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:22.009" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Tiger%20Shark.png"&gt;&lt;img src="Results_for_Tiger%20Shark.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:21.828" endtime="20210829 17:35:22.009"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:21.814" endtime="20210829 17:35:22.009"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:22.009" level="INFO">Tiger Shark</msg>
+<status status="PASS" starttime="20210829 17:35:22.009" endtime="20210829 17:35:22.009"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:21.357" endtime="20210829 17:35:22.009"/>
+</iter>
+<iter>
+<var name="${element}">Goldfish</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:22.010" level="INFO">Typing text 'Goldfish' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:22.010" endtime="20210829 17:35:22.086"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:22.087" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:22.466" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:22.466" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:22.086" endtime="20210829 17:35:22.472"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:22.010" endtime="20210829 17:35:22.472"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:22.488" level="INFO">Current page contains text 'Goldfish'.</msg>
+<status status="PASS" starttime="20210829 17:35:22.473" endtime="20210829 17:35:22.488"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:22.659" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Goldfish.png"&gt;&lt;img src="Results_for_Goldfish.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:22.488" endtime="20210829 17:35:22.659"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:22.472" endtime="20210829 17:35:22.659"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:22.660" level="INFO">Goldfish</msg>
+<status status="PASS" starttime="20210829 17:35:22.659" endtime="20210829 17:35:22.660"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:22.010" endtime="20210829 17:35:22.660"/>
+</iter>
+<iter>
+<var name="${element}">Bulldog</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:22.661" level="INFO">Typing text 'Bulldog' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:22.661" endtime="20210829 17:35:22.737"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:22.738" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:23.116" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:23.116" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:22.737" endtime="20210829 17:35:23.123"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:22.660" endtime="20210829 17:35:23.123"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:23.137" level="INFO">Current page contains text 'Bulldog'.</msg>
+<status status="PASS" starttime="20210829 17:35:23.124" endtime="20210829 17:35:23.137"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:23.287" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Bulldog.png"&gt;&lt;img src="Results_for_Bulldog.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:23.138" endtime="20210829 17:35:23.287"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:23.124" endtime="20210829 17:35:23.287"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:23.287" level="INFO">Bulldog</msg>
+<status status="PASS" starttime="20210829 17:35:23.287" endtime="20210829 17:35:23.287"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:22.660" endtime="20210829 17:35:23.287"/>
+</iter>
+<iter>
+<var name="${element}">Poodle</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:23.288" level="INFO">Typing text 'Poodle' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:23.288" endtime="20210829 17:35:23.364"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:23.364" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:23.742" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:23.742" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:23.364" endtime="20210829 17:35:23.751"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:23.288" endtime="20210829 17:35:23.751"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:23.770" level="INFO">Current page contains text 'Poodle'.</msg>
+<status status="PASS" starttime="20210829 17:35:23.752" endtime="20210829 17:35:23.771"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:23.927" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Poodle.png"&gt;&lt;img src="Results_for_Poodle.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:23.771" endtime="20210829 17:35:23.927"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:23.752" endtime="20210829 17:35:23.927"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:23.927" level="INFO">Poodle</msg>
+<status status="PASS" starttime="20210829 17:35:23.927" endtime="20210829 17:35:23.927"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:23.287" endtime="20210829 17:35:23.927"/>
+</iter>
+<iter>
+<var name="${element}">Dalmation</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:23.929" level="INFO">Typing text 'Dalmation' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:23.929" endtime="20210829 17:35:24.016"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:24.017" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:24.404" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:24.404" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:24.016" endtime="20210829 17:35:24.409"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:23.928" endtime="20210829 17:35:24.410"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:24.427" level="INFO">Current page contains text 'Dalmation'.</msg>
+<status status="PASS" starttime="20210829 17:35:24.412" endtime="20210829 17:35:24.427"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:24.611" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Dalmation.png"&gt;&lt;img src="Results_for_Dalmation.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:24.427" endtime="20210829 17:35:24.611"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:24.410" endtime="20210829 17:35:24.611"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:24.612" level="INFO">Dalmation</msg>
+<status status="PASS" starttime="20210829 17:35:24.611" endtime="20210829 17:35:24.612"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:23.928" endtime="20210829 17:35:24.612"/>
+</iter>
+<iter>
+<var name="${element}">Golden Retriever</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:24.613" level="INFO">Typing text 'Golden Retriever' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:24.612" endtime="20210829 17:35:24.694"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:24.695" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:25.101" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:25.101" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:24.694" endtime="20210829 17:35:25.105"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:24.612" endtime="20210829 17:35:25.105"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:25.119" level="INFO">Current page contains text 'Golden Retriever'.</msg>
+<status status="PASS" starttime="20210829 17:35:25.105" endtime="20210829 17:35:25.119"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:25.321" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Golden%20Retriever.png"&gt;&lt;img src="Results_for_Golden%20Retriever.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:25.119" endtime="20210829 17:35:25.321"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:25.105" endtime="20210829 17:35:25.321"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:25.321" level="INFO">Golden Retriever</msg>
+<status status="PASS" starttime="20210829 17:35:25.321" endtime="20210829 17:35:25.322"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:24.612" endtime="20210829 17:35:25.322"/>
+</iter>
+<iter>
+<var name="${element}">Labrador Retriever</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:25.323" level="INFO">Typing text 'Labrador Retriever' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:25.322" endtime="20210829 17:35:25.405"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:25.405" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:25.748" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:25.748" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:25.405" endtime="20210829 17:35:25.753"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:25.322" endtime="20210829 17:35:25.754"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:25.773" level="INFO">Current page contains text 'Labrador Retriever'.</msg>
+<status status="PASS" starttime="20210829 17:35:25.754" endtime="20210829 17:35:25.773"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:25.965" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Labrador%20Retriever.png"&gt;&lt;img src="Results_for_Labrador%20Retriever.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:25.773" endtime="20210829 17:35:25.965"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:25.754" endtime="20210829 17:35:25.965"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:25.965" level="INFO">Labrador Retriever</msg>
+<status status="PASS" starttime="20210829 17:35:25.965" endtime="20210829 17:35:25.966"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:25.322" endtime="20210829 17:35:25.966"/>
+</iter>
+<iter>
+<var name="${element}">Chihuahua</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:25.966" level="INFO">Typing text 'Chihuahua' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:25.966" endtime="20210829 17:35:26.046"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:26.046" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:26.424" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:26.424" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:26.046" endtime="20210829 17:35:26.432"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:25.966" endtime="20210829 17:35:26.432"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:26.448" level="INFO">Current page contains text 'Chihuahua'.</msg>
+<status status="PASS" starttime="20210829 17:35:26.433" endtime="20210829 17:35:26.448"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:26.599" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Chihuahua.png"&gt;&lt;img src="Results_for_Chihuahua.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:26.448" endtime="20210829 17:35:26.599"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:26.433" endtime="20210829 17:35:26.599"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:26.599" level="INFO">Chihuahua</msg>
+<status status="PASS" starttime="20210829 17:35:26.599" endtime="20210829 17:35:26.599"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:25.966" endtime="20210829 17:35:26.599"/>
+</iter>
+<iter>
+<var name="${element}">Rattlesnake</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:26.600" level="INFO">Typing text 'Rattlesnake' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:26.600" endtime="20210829 17:35:26.680"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:26.680" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:27.088" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:27.089" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:26.680" endtime="20210829 17:35:27.096"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:26.600" endtime="20210829 17:35:27.096"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:27.111" level="INFO">Current page contains text 'Rattlesnake'.</msg>
+<status status="PASS" starttime="20210829 17:35:27.097" endtime="20210829 17:35:27.111"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:27.273" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Rattlesnake.png"&gt;&lt;img src="Results_for_Rattlesnake.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:27.111" endtime="20210829 17:35:27.273"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:27.097" endtime="20210829 17:35:27.273"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:27.273" level="INFO">Rattlesnake</msg>
+<status status="PASS" starttime="20210829 17:35:27.273" endtime="20210829 17:35:27.273"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:26.599" endtime="20210829 17:35:27.273"/>
+</iter>
+<iter>
+<var name="${element}">Iguana</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:27.274" level="INFO">Typing text 'Iguana' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:27.274" endtime="20210829 17:35:27.353"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:27.354" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:27.780" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:27.780" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:27.354" endtime="20210829 17:35:27.784"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:27.274" endtime="20210829 17:35:27.785"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:27.799" level="INFO">Current page contains text 'Iguana'.</msg>
+<status status="PASS" starttime="20210829 17:35:27.785" endtime="20210829 17:35:27.799"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:27.991" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Iguana.png"&gt;&lt;img src="Results_for_Iguana.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:27.799" endtime="20210829 17:35:27.991"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:27.785" endtime="20210829 17:35:27.991"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:27.991" level="INFO">Iguana</msg>
+<status status="PASS" starttime="20210829 17:35:27.991" endtime="20210829 17:35:27.991"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:27.273" endtime="20210829 17:35:27.992"/>
+</iter>
+<iter>
+<var name="${element}">Manx</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:27.993" level="INFO">Typing text 'Manx' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:27.992" endtime="20210829 17:35:28.066"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:28.067" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:28.489" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:28.489" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:28.067" endtime="20210829 17:35:28.500"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:27.992" endtime="20210829 17:35:28.500"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:28.515" level="INFO">Current page contains text 'Manx'.</msg>
+<status status="PASS" starttime="20210829 17:35:28.501" endtime="20210829 17:35:28.515"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:28.731" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Manx.png"&gt;&lt;img src="Results_for_Manx.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:28.515" endtime="20210829 17:35:28.731"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:28.500" endtime="20210829 17:35:28.731"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:28.731" level="INFO">Manx</msg>
+<status status="PASS" starttime="20210829 17:35:28.731" endtime="20210829 17:35:28.731"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:27.992" endtime="20210829 17:35:28.731"/>
+</iter>
+<iter>
+<var name="${element}">Persia</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:28.732" level="INFO">Typing text 'Persia' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:28.732" endtime="20210829 17:35:28.811"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:28.812" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:29.181" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:29.181" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:28.811" endtime="20210829 17:35:29.186"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:28.732" endtime="20210829 17:35:29.187"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:29.201" level="INFO">Current page contains text 'Persia'.</msg>
+<status status="PASS" starttime="20210829 17:35:29.187" endtime="20210829 17:35:29.201"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:29.372" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Persia.png"&gt;&lt;img src="Results_for_Persia.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:29.201" endtime="20210829 17:35:29.372"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:29.187" endtime="20210829 17:35:29.373"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:29.373" level="INFO">Persia</msg>
+<status status="PASS" starttime="20210829 17:35:29.373" endtime="20210829 17:35:29.373"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:28.731" endtime="20210829 17:35:29.373"/>
+</iter>
+<iter>
+<var name="${element}">Amazon Parrot</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:29.374" level="INFO">Typing text 'Amazon Parrot' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:29.374" endtime="20210829 17:35:29.455"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:29.456" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:29.870" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:29.870" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:29.455" endtime="20210829 17:35:29.880"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:29.373" endtime="20210829 17:35:29.880"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:29.895" level="INFO">Current page contains text 'Amazon Parrot'.</msg>
+<status status="PASS" starttime="20210829 17:35:29.881" endtime="20210829 17:35:29.895"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:30.057" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Amazon%20Parrot.png"&gt;&lt;img src="Results_for_Amazon%20Parrot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:29.895" endtime="20210829 17:35:30.057"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:29.881" endtime="20210829 17:35:30.057"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:30.058" level="INFO">Amazon Parrot</msg>
+<status status="PASS" starttime="20210829 17:35:30.057" endtime="20210829 17:35:30.058"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:29.373" endtime="20210829 17:35:30.058"/>
+</iter>
+<iter>
+<var name="${element}">Finch</var>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<arg>${element}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210829 17:35:30.059" level="INFO">Typing text 'Finch' into text field 'xpath://*[@id='SearchContent']/form/input[1]'.</msg>
+<status status="PASS" starttime="20210829 17:35:30.058" endtime="20210829 17:35:30.136"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210829 17:35:30.136" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='SearchContent']/form/input[2] element.</msg>
+<msg timestamp="20210829 17:35:30.520" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210829 17:35:30.520" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210829 17:35:30.136" endtime="20210829 17:35:30.528"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:30.058" endtime="20210829 17:35:30.529"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>${element}</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SearchText}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210829 17:35:30.547" level="INFO">Current page contains text 'Finch'.</msg>
+<status status="PASS" starttime="20210829 17:35:30.529" endtime="20210829 17:35:30.547"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=Results_for_${SearchText}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210829 17:35:30.703" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results_for_Finch.png"&gt;&lt;img src="Results_for_Finch.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210829 17:35:30.547" endtime="20210829 17:35:30.703"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:30.529" endtime="20210829 17:35:30.703"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210829 17:35:30.703" level="INFO">Finch</msg>
+<status status="PASS" starttime="20210829 17:35:30.703" endtime="20210829 17:35:30.704"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:30.058" endtime="20210829 17:35:30.704"/>
+</iter>
+<status status="PASS" starttime="20210829 17:35:19.992" endtime="20210829 17:35:30.704"/>
+</for>
+<doc>This test case verifies the basic search by product name: Search-6</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20210829 17:35:19.992" endtime="20210829 17:35:30.705"/>
+</test>
+<test id="s1-t4" name="Close Browser">
+<kw name="Finish TestCase" library="CommonFunctionality">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210829 17:35:30.708" endtime="20210829 17:35:32.856"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:30.708" endtime="20210829 17:35:32.856"/>
+</kw>
+<status status="PASS" starttime="20210829 17:35:30.708" endtime="20210829 17:35:32.857"/>
+</test>
+<doc>Basic Search Functionality By Name</doc>
+<status status="PASS" starttime="20210829 17:35:17.940" endtime="20210829 17:35:32.859"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Correct search by name everything">Correct search by name everything</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

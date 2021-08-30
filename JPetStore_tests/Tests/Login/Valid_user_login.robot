@@ -1,13 +1,13 @@
 *** Settings ***
-Documentation  Basic Search Functionality By ID
+Documentation  Basic Valid Login Functionality
 
 Resource  ../../Resources/CommonFunctionality.robot
 Resource  ../../Resources/PageObjects/HeaderPage.robot
-Resource  ../../Resources/PageObjects/SearchResultsPage.robot
+Resource  ../../Resources/PageObjects/LoginPage.robot
+
 
 *** Variables ***
 
-${ProductID}  FL-DLH-02
 
 *** Test Cases ***
 
@@ -18,12 +18,13 @@ Enter The Store
 
     CommonFunctionality.Enter The Store
 
-Verify basic search functionality
-    [Documentation]  This test case verifies the basic search:
+Verify basic user login functionality
+    [Documentation]  This test case verifies the basic login functionality:
     [Tags]  Functional
 
-    HeaderPage.Input Search Text and Click Search  ${ProductID}
-    SearchResultsPage.Verify Search Results  ${ProductID}
+    HeaderPage.Click Sign In Button
+    LoginPage.Input Login and Password Data and Click Login
+    LoginPage.Verify Login
 
 Close Browser
 

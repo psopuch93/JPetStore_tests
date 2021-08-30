@@ -17,5 +17,8 @@ Start TestCase
 Enter the Store
     Click Element  ${EnterStoreButton}
 
+Logo Entry
+    Click Element  ${LogoEntry}
+
 Finish TestCase
     Close Browser

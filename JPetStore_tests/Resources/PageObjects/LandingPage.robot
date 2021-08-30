@@ -1,11 +1,11 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource  ./HeaderPage.robot
+Resource  ./HomePage.robot
 *** Variables ***
 
 
 *** Keywords ***
-Verify Search Results
+Verify Browsing
     [Arguments]  ${SearchText}
     Page Should Contain  ${SearchText}
-    Capture Page Screenshot  filename=Results_for_${SearchText}.png
+    Capture Page Screenshot  filename=Results_for_browsing_by_list_item_${SearchText}.png
