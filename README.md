@@ -23,9 +23,9 @@ This repository contains automatic tests with Python Robotframework
 
 3. Open command prompt as administrator and type:
 
-      pip3 install robotframework
+      ```pip3 install robotframework```
 
-      pip3 install robotframework-seleniumlibrary
+      ```pip3 install robotframework-seleniumlibrary```
 
 4. Download Selenium Browserdriver for the browsers. Use specify Selenium drivers version to your browser version:
 
@@ -37,25 +37,25 @@ This repository contains automatic tests with Python Robotframework
       
 6. Best way to run tests is open my project on pycharm and using Terminal type:
 
-      robot -d {PATH_TO_RESULTS} {PATH_TO_TEST.robot}
+      ```robot -d {PATH_TO_RESULTS} {PATH_TO_TEST.robot}```
      
       For example:
       
-      robot -d /Results/Search/Correct_search_by_name_everything Tests/Search/Correct_search_by_name_everything.robot
+      ```robot -d /Results/Search/Correct_search_by_name_everything Tests/Search/Correct_search_by_name_everything.robot```
 
 ## Linux users
 
 1. APT udpate and install python
 
-      sudo apt-get update
+      ```sudo apt-get update```
 
-      sudo apt-get install python3.6
+      ```sudo apt-get install python3.8```
   
 2. Install robotframework and selenium
   
-      pip install robotframework
+      ```pip install robotframework```
 
-      pip install -U selenium
+      ```pip install -U selenium```
   
 3. Download specify webdrivers for specify webbrowser version
 
@@ -67,7 +67,7 @@ This repository contains automatic tests with Python Robotframework
 
       Copy the extracted file ‘geckodriver’ to /usr/bin:
 
-      sudo cp path_to_geckdriver /usr/bin
+      ```sudo cp path_to_geckdriver /usr/bin```
 
 
 # Results
