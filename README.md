@@ -72,5 +72,5 @@ This repository contains automatic tests with Python Robotframework
 
 # Results
 
-  Each test contains a test case from testrail, screenshots, log and report files.
+  Each test contains a testrail test case, screenshots, log and report files.
 
