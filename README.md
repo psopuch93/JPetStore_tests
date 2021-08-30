@@ -42,3 +42,35 @@ This repository contains automatic tests with Python Robotframework
       For example:
       
       robot -d /Results/Search/Correct_search_by_name_everything Tests/Search/Correct_search_by_name_everything.robot
+
+## Linux users
+
+1. APT udpate and install python
+
+      sudo apt-get update
+
+      sudo apt-get install python3.6
+  
+2. Install robotframework and selenium
+  
+      pip install robotframework
+
+      pip install -U selenium
+  
+3. Download specify webdrivers for specify webbrowser version
+
+      For example:
+
+      Geckodrivers for firefox:
+
+      https://github.com/mozilla/geckodriver/releases
+
+      Copy the extracted file ‘geckodriver’ to /usr/bin:
+
+      sudo cp path_to_geckdriver /usr/bin
+
+
+# Results
+
+  Each test contains a test case from testrail, screenshots, log and report files.
+
